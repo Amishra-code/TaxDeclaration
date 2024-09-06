@@ -1,0 +1,124 @@
+﻿@model Tax
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2 class="text-primary">Saved Form</h2>
+    <div class="form-container">
+        <div class="card-element">
+            <div>Employee ID: @Model.EmpId</div>
+            <div>Employee Name: @Model.EmployeeName</div>
+            <div>Financial Year: @Model.FinancialYear</div>
+        </div>
+        <form method="post" class="custom-form">
+            <div class="form-group">
+                <input name="EmployeeName" class="custom-input" hidden value="@Model.EmployeeName" />
+                <input name="EmpId" class="custom-input" hidden value="@Model.EmpId" />
+                <input name="EmployeeUserName" class="custom-input" hidden value="@Model.EmployeeUserName" />
+                <input name="FinancialYear" class="custom-input" hidden value="@Model.FinancialYear" />
+                <input name="TaxId" class="custom-input" hidden value="@Model.TaxId" />
+            </div>
+            <div class="form-group">
+                <label for="OtherIncome">1. Any other income (previous employment, income from house property, interest income etc.)</label>
+                <input id="OtherIncome" name="OtherIncome" class="custom-input" value="@Model.OtherIncome" readonly />
+                <span asp-validation-for="OtherIncome" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <h6>2. Investment under Section 80C</h6><br />
+                <label for="SukanyaSamriddhiAccount">a. Sukanya Samriddhi Account</label>
+                <input id="SukanyaSamriddhiAccount" name="SukanyaSamriddhiAccount" class="custom-input" value="@Model.SukanyaSamriddhiAccount" readonly />
+                <span asp-validation-for="SukanyaSamriddhiAccount" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="PPF_NSC_ULIP">b. PPF / NSC / ULIP</label>
+                <input id="PPF_NSC_ULIP" name="PPF_NSC_ULIP" class="custom-input" value="@Model.PPF_NSC_ULIP" readonly />
+                <span asp-validation-for="PPF_NSC_ULIP" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="LifeInsurancePremium">c. Life Insurance Premium</label>
+                <input id="LifeInsurancePremium" name="LifeInsurancePremium" class="custom-input" value="@Model.LifeInsurancePremium" readonly />
+                <span asp-validation-for="LifeInsurancePremium" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="TuitionFee">d. Tuition Fee for Child</label>
+                <input id="TuitionFee" name="TuitionFee" class="custom-input" value="@Model.TuitionFee" readonly />
+                <span asp-validation-for="TuitionFee" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="BankFixedDeposit">e. Bank Fixed Deposit(More than Five Years)</label>
+                <input id="BankFixedDeposit" name="BankFixedDeposit" class="custom-input" value="@Model.BankFixedDeposit" readonly />
+                <span asp-validation-for="BankFixedDeposit" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="PrincipalAmountHousingLoan">f. Principal amount of housing loan paid during the year.</label>
+                <input id="PrincipalAmountHousingLoan" name="PrincipalAmountHousingLoan" class="custom-input" value="@Model.PrincipalAmountHousingLoan" readonly />
+                <span asp-validation-for="PrincipalAmountHousingLoan" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="NationalPensionScheme">3. National Pension Scheme 80CCD(1B)(Limit 50K)</label>
+                <input id="NationalPensionScheme" name="NationalPensionScheme" class="custom-input" value="@Model.NationalPensionScheme" readonly />
+                <span asp-validation-for="NationalPensionScheme" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="HigherEducationLoan">4. Higher Education Loan interest u/s 80E</label>
+                <input id="HigherEducationLoan" name="HigherEducationLoan" class="custom-input" value="@Model.HigherEducationLoan" readonly />
+                <span asp-validation-for="HigherEducationLoan" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="InterestHousingLoan">5. Interest paid on Housing Loan u/s 24</label>
+                <input id="InterestHousingLoan" name="InterestHousingLoan" class="custom-input" value="@Model.InterestHousingLoan" readonly />
+                <span asp-validation-for="InterestHousingLoan" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="HouseRent">6. House Rent paid every month (For above amount Rs 8333/- PAN)</label>
+                <input id="HouseRent" name="HouseRent" class="custom-input" value="@Model.HouseRent" readonly />
+                <span asp-validation-for="HouseRent" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="TDS">7. Tax Deducted at Source by the previous employer or TDS deducted by any other person from your income.</label>
+                <input id="TDS" name="TDS" class="custom-input" value="@Model.TDS" readonly />
+                <span asp-validation-for="TDS" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="MedicalClaim">8. Medical insurance policy-premium (80 D)</label>
+                <input id="MedicalClaim" name="MedicalClaim" class="custom-input" value="@Model.MedicalClaim" readonly />
+                <span asp-validation-for="MedicalClaim" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="HealthCheckup">9. Preventive Health check-up for Self & Family (80D) (Limit 5K)</label>
+                <input id="HealthCheckup" name="HealthCheckup" class="custom-input" value="@Model.HealthCheckup" readonly />
+                <span asp-validation-for="HealthCheckup" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="LTAReimbursement" type="checkbox" disabled/>
+                <label asp-for="LTAReimbursement">LTA (Do you want LTA as a reimbursement?)</label>
+                <span asp-validation-for="LTAReimbursement" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="EducationAllowanceReimbursement" type="checkbox" disabled />
+                <label asp-for="EducationAllowanceReimbursement">Education Allowance (Do you want Edu Allowance as a reimbursement?)</label>
+                <span asp-validation-for="EducationAllowanceReimbursement" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <a>Add More</a>
+            </div>
+            <div class="form-group">
+                <div>Name of the Staff: @ViewBag.EmployeeName</div>
+                <div>PAN No: @ViewBag.Pan</div>
+            </div>
+            <div class="form-group">
+                <div>Staff No: @ViewBag.EmpID</div>
+                <div>Address: @ViewBag.Address</div>
+            </div>
+            <div class="form-group-button">
+                <a asp-controller="Employee" asp-action="RequestForUnfreeze" asp-route-TaxId="@Model.TaxId" class="btn btn-primary mx-2"> Request For Unfreeze </a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

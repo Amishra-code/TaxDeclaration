@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <main>
+        <div class="year-form-container">
+            <form method="get">
+                <div class="custom-border custom-padding custom-margin-top">
+                    <div class="custom-row custom-padding-bottom">
+                        <h2 class="custom-text-primary">Choose Financial Year</h2>
+                        <hr class="custom-hr" />
+                        <div asp-validation-summary="All"></div>
+                        <div class="custom-margin-bottom custom-padding">
+                            <label for="year">Financial Year</label>
+                            <select id="year" name="year" class="custom-select">
+                                <option value="">Select Year</option>
+                                <option value="@(DateTime.Now.Year)" selected>@(DateTime.Now.Year)</option>
+                                <option value="@(DateTime.Now.Year-1)">@(DateTime.Now.Year - 1)</option>
+                                <option value="@(DateTime.Now.Year-2)">@(DateTime.Now.Year - 2)</option>
+                                <option value="@(DateTime.Now.Year-3)">@(DateTime.Now.Year - 3)</option>
+                                <option value="@(DateTime.Now.Year-4)">@(DateTime.Now.Year - 4)</option>
+                                <option value="@(DateTime.Now.Year-5)">@(DateTime.Now.Year - 5)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="custom-button" style="width:150px" asp-action="TaxForm">Go To Form</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>

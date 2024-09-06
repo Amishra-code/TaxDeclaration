@@ -1,0 +1,113 @@
+﻿@model Tax
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <h2 class="text-primary">View Form</h2>
+    <div class="card-element">
+        <div>Employee ID: <span id="empId">@Model.EmpId</span></div>
+        <div>Employee Name: <span id="empName">@Model.EmployeeName</span></div>
+        <div>Financial Year: <span id="financialYear">@Model.FinancialYear</span></div>
+    </div>
+    
+    <hr>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Description</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>1. Any other income (previous employment, income from house property, interest income etc.)</td>
+                <td>@Model.OtherIncome</td>
+            </tr>
+            <tr>
+                <td>2. Investment under Section 80C</td>
+                <td>@Model.SukanyaSamriddhiAccount</td>
+            </tr>
+            <tr>
+                <td>3. PPF / NSC / ULIP</td>
+                <td>@Model.PPF_NSC_ULIP</td>
+            </tr>
+            <tr>
+                <td>4. Life Insurance Premium</td>
+                <td>@Model.LifeInsurancePremium</td>
+            </tr>
+            <tr>
+                <td>5. Tuition Fee for Child</td>
+                <td>@Model.TuitionFee</td>
+            </tr>
+            <tr>
+                <td>6. Bank Fixed Deposit(More than Five Years)</td>
+                <td>@Model.BankFixedDeposit</td>
+            </tr>
+            <tr>
+                <td>7. Principal amount of housing loan paid during the year.</td>
+                <td>@Model.PrincipalAmountHousingLoan</td>
+            </tr>
+            <tr>
+                <td>8. National Pension Scheme 80CCD(1B)(Limit 50K)</td>
+                <td>@Model.NationalPensionScheme</td>
+            </tr>
+            <tr>
+                <td>9. Higher Education Loan interest u/s 80E</td>
+                <td>@Model.HigherEducationLoan</td>
+            </tr>
+            <tr>
+                <td>10. Interest paid on Housing Loan u/s 24</td>
+                <td>@Model.InterestHousingLoan</td>
+            </tr>
+            <tr>
+                <td>11. Houser Rent paid every month(For above amt Rs 8333/-PAN)</td>
+                <td>@Model.HouseRent</td>
+            </tr>
+            <tr>
+                <td>12. Tax Deducted at Source by the previous employer or TDS deducted by any other person from your income.</td>
+                <td>@Model.TDS</td>
+            </tr>
+            <tr>
+                <td>13. Medi-claim insurance policy-premium (80 D)</td>
+                <td>@Model.MedicalClaim</td>
+            </tr>
+            <tr>
+                <td>14. Preventive Health check-up for Self & Family (80D) (Limit 5K)</td>
+                <td>@Model.HealthCheckup</td>
+            </tr>
+            <tr>
+                <td>
+                    <input asp-for="LTAReimbursement" type="checkbox" class="form-check-input" disabled>
+                    <label asp-for="LTAReimbursement" class="form-check-label" value="@Model.LTAReimbursement">LTA (Do you want LTA as a reimbursement?)</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input asp-for="EducationAllowanceReimbursement" type="checkbox" class="form-check-input" disabled>
+                    <label asp-for="EducationAllowanceReimbursement" class="form-check-label" value="@Model.EducationAllowanceReimbursement">education Allowance (Do you want Edu Allowance as a reimbursement?)</label>
+                    @* <span asp-validation-for="SukanyaSamriddhiAccount" class="text-danger"></span> *@
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <div>Name of the Staff : @Model.EmployeeName</div>
+                        <div>PAN No : @ViewBag.Pan</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div>Staff No : @Model.EmpId</div>
+                        <div>Address : @ViewBag.Address</div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

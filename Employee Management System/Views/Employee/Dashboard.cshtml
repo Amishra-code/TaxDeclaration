@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2 class="dashboard-heading">Dashboard</h2>
+            </div>
+        </div>
+        <div class="row centered-card">
+            <div class="col-md-6">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Welcome @ViewBag.EmployeeName!</h5>
+                        <p class="card-text">Employee ID: @ViewBag.EmpId</p>
+                        <p class="card-text">PAN: @ViewBag.Pan</p>
+                        <p class="card-text">Address: @ViewBag.Address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

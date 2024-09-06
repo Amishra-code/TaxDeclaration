@@ -1,0 +1,19 @@
+﻿<main>
+	<div class="year-form-container">
+		<form method="POST">
+			<div class="custom-border custom-padding custom-margin-top">
+				<div class="custom-row custom-padding-bottom">
+					<h2 class="custom-text-primary">Request For Unfreeze</h2>
+					<hr class="custom-hr" />
+				</div>
+				<div class="custom-margin-bottom custom-padding">
+					<input name="TaxId" class="form-control" hidden value="@ViewBag.TaxId" />
+					<label>Write the Unfreeze Reason</label>
+					<input name="UnfreezeReason" class="form-control" class="custom-input" />
+					@* <span asp-validation-for="Name" class="text-danger"></span> *@
+				</div>
+				<button type="submit" class="btn btn-primary" style="width:150px" asp-controller="Employee" asp-action="RequestForUnfreezeForm">Submit</button>
+			</div>
+		</form>
+	</div>
+</main>
