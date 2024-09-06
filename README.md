@@ -10,6 +10,7 @@ The Tax Form Management System is a comprehensive solution designed to streamlin
 
 - **Defined Roles and Permissions:** The system incorporates well-defined roles and permissions for both employees and admins, which improves data security, reduces the potential for errors, and optimizes the overall tax filing process.
 
+<u></u>
 <br><br>
 <p align="center">
   <strong><u>REGISTER PAGE</u></strong>
